@@ -9,8 +9,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import BlockMedicineModal from './components/BlockMedicineModal';
 import { useBlocklist } from '../context/BlocklistContext';
 import { toast } from 'react-toastify';
-import { Tooltip } from 'react-tooltip';
-import 'react-tooltip/dist/react-tooltip.css';
 
 const MedicineList = () => {
   const { medicines, setMedicines, addBlockedMedicine } = useBlocklist();
@@ -412,8 +410,6 @@ const MedicineList = () => {
             {/* Action Buttons */}
             <div className="mt-4 pt-4 border-t flex justify-end gap-2">
               <button
-                data-tooltip-id="view-tooltip"
-                data-tooltip-content="View medicine details"
                 onClick={() => handleAction(medicine, 'view')}
                 className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
                 title="View Details"
@@ -421,8 +417,6 @@ const MedicineList = () => {
                 <FiEye className="w-4 h-4" />
               </button>
               <button
-                data-tooltip-id="edit-tooltip"
-                data-tooltip-content="Edit medicine information"
                 onClick={() => handleAction(medicine, 'edit')}
                 className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
                 title="Edit"
@@ -430,8 +424,6 @@ const MedicineList = () => {
                 <FiEdit2 className="w-4 h-4" />
               </button>
               <button
-                data-tooltip-id="block-tooltip"
-                data-tooltip-content="Block medicine listing"
                 onClick={() => handleAction(medicine, 'block')}
                 className="p-2 text-gray-600 hover:text-red-600 transition-colors"
                 title="Block"
@@ -507,24 +499,18 @@ const MedicineList = () => {
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <div className="flex justify-end gap-2">
                     <button
-                      data-tooltip-id="view-tooltip"
-                      data-tooltip-content="View medicine details"
                       onClick={() => handleAction(medicine, 'view')}
                       className="text-gray-600 hover:text-blue-600"
                     >
                       <FiEye className="w-4 h-4" />
                     </button>
                     <button
-                      data-tooltip-id="edit-tooltip"
-                      data-tooltip-content="Edit medicine information"
                       onClick={() => handleAction(medicine, 'edit')}
                       className="text-gray-600 hover:text-blue-600"
                     >
                       <FiEdit2 className="w-4 h-4" />
                     </button>
                     <button
-                      data-tooltip-id="block-tooltip"
-                      data-tooltip-content="Block medicine listing"
                       onClick={() => handleAction(medicine, 'block')}
                       className="text-gray-600 hover:text-red-600"
                     >
